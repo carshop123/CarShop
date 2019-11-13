@@ -2,6 +2,10 @@ package com.dt.common.utils;
 
 import com.alibaba.fastjson.JSON;
 import com.dt.common.config.RedissonConfig;
+import com.dt.common.emun.Keys;
+import com.td.pojo.pojos.UserLevel;
+import com.td.pojo.pojos.UserLog;
+import com.td.pojo.pojos.UserOrder;
 import org.redisson.api.RedissonClient;
 import org.springframework.stereotype.Component;
 
@@ -45,18 +49,6 @@ public class RedisUtil {
         client.getMap(key).put(field, value);
     }
 
-
-    public static List<Object> hListAll(String key) {
-        List<Object> objects = (List<Object>) client.getMap(key).readAllValues();
-        return objects;
-    }
-
-    public static void hSetAll(List<Appointment> appointments) {
-        for (Appointment appointment : appointments) {
-            hset(Keys.APPOINTMENT.getMsg(), appointment.getId() + "", JSON.toJSONString(appointment));
-        }
-    }
-
     /**
      * 获取 hash map redis 中根据 key 获取values 并转化成对应的 实体类集合
      *
@@ -92,16 +84,16 @@ public class RedisUtil {
         }
 
         for (T obj : objList) {
-            if (obj instanceof Appointment) {
+            if (obj instanceof UserLevel) {
                 // 放进 redis
-                client.getMap(Keys.APPOINTMENT.getMsg()).put(((Appointment) obj).getId() + "", JSON.toJSONString(obj));
+                client.getMap(Keys.APPOINTMENT.getMsg()).put(((UserLevel) obj).getId() + "", JSON.toJSONString(obj));
                 // 设置超时时间
                 client.getMap(Keys.APPOINTMENT.getMsg()).expire(24, TimeUnit.HOURS);
-            } else if (obj instanceof OrderTable) {
-                client.getMap(Keys.ORDER.getMsg()).put(((OrderTable) obj).getId()+"", JSON.toJSONString(obj));
+            } else if (obj instanceof UserOrder) {
+                client.getMap(Keys.ORDER.getMsg()).put(((UserOrder) obj).getId()+"", JSON.toJSONString(obj));
                 client.getMap(Keys.APPOINTMENT.getMsg()).expire(24, TimeUnit.HOURS);
-            } else if (obj instanceof Evaluate) {
-                client.getMap(Keys.EVALUATE.getMsg()).put(((Evaluate) obj).getId() + "", JSON.toJSONString(obj));
+            } else if (obj instanceof UserLog) {
+                client.getMap(Keys.EVALUATE.getMsg()).put(((UserLog) obj).getId() + "", JSON.toJSONString(obj));
                 client.getMap(Keys.APPOINTMENT.getMsg()).expire(24, TimeUnit.HOURS);
             }
         }

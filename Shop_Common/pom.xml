@@ -12,6 +12,13 @@
     <artifactId>Shop_Common</artifactId>
     <packaging>jar</packaging>
     <dependencies>
+        <!--  实体类  -->
+        <dependency>
+            <groupId>com.td</groupId>
+            <artifactId>Shop_Entity</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
         <!--Redisson-->
         <dependency>
             <groupId>org.redisson</groupId>
