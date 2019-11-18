@@ -12,6 +12,7 @@
         <module>Shop_MessageProvider</module>
         <module>Shop_MessagesApi</module>
         <module>Shop_Zuul</module>
+        <module>Shop_Recourse</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -34,6 +35,9 @@
         <redisson.version>3.5.0</redisson.version>
         <fastjson.version>1.1.37</fastjson.version>
         <druid.version>1.1.20</druid.version>
+        <swaggerUI.version>2.9.2</swaggerUI.version>
+        <aliyunOSS.version>3.7.1-a</aliyunOSS.version>
+        <jakson.version>1.1.37</jakson.version>
     </properties>
 
     <dependencyManagement>
@@ -120,10 +124,10 @@
         </dependency>
 
         <!--   rabbitMQ     -->
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.amqp</groupId>
             <artifactId>spring-rabbit</artifactId>
-        </dependency>
+        </dependency>-->
         <!--Redisson-->
         <dependency>
             <groupId>org.redisson</groupId>
@@ -142,6 +146,18 @@
             <artifactId>druid</artifactId>
             <version>${druid.version}</version>
         </dependency>
+        <!--  swagger-ui  -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swaggerUI.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swaggerUI.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

@@ -1,0 +1,17 @@
+
+server:
+  port: 8813
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://123.57.251.4:8761/eureka/  #注册中心的地址
+spring:
+  application:
+    name: ResourceServer
+  # springboot 整合 rabbitMQ
+  rabbitmq:
+    host: 39.106.92.224
+    port: 5672
+    username: luotuan
+    password: 75321

@@ -9,22 +9,27 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>Shop_MessageProvider</artifactId>
-
+    <artifactId>Shop_Recourse</artifactId>
+    <!--  资源服务，独立项目-->
     <dependencies>
-        <!--   rabbitMQ     -->
+        <!-- swaggerUI -->
         <dependency>
-            <groupId>org.springframework.amqp</groupId>
-            <artifactId>spring-rabbit</artifactId>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swaggerUI.version}</version>
         </dependency>
 
-        <!--   jakson   -->
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>${jakson.version}</version>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swaggerUI.version}</version>
         </dependency>
-
+        <!--   aliyun     -->
+        <dependency>
+            <groupId>com.aliyun.oss</groupId>
+            <artifactId>aliyun-sdk-oss</artifactId>
+            <version>${aliyunOSS.version}</version>
+        </dependency>
         <dependency>
             <groupId>com.td</groupId>
             <artifactId>Shop_Common</artifactId>
@@ -35,6 +40,11 @@
             <groupId>com.td</groupId>
             <artifactId>Shop_Entity</artifactId>
             <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.amqp</groupId>
+            <artifactId>spring-rabbit</artifactId>
         </dependency>
     </dependencies>
 

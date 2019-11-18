@@ -1,0 +1,12 @@
+server:
+  port: 8902
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://123.57.251.4:8761/eureka/  #注册中心的地址
+# 消费者的名字
+spring:
+  application:
+    name: UserProvider
+  main:
+    allow-bean-definition-overriding: true
