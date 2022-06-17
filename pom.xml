@@ -33,11 +33,11 @@
         <mybatis.version>3.5.3</mybatis.version>
         <mybatis-spring.version>2.0.3</mybatis-spring.version>
         <redisson.version>3.5.0</redisson.version>
-        <fastjson.version>1.1.37</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
         <druid.version>1.1.20</druid.version>
         <swaggerUI.version>2.9.2</swaggerUI.version>
         <aliyunOSS.version>3.7.1-a</aliyunOSS.version>
-        <jakson.version>1.1.37</jakson.version>
+        <jakson.version>1.2.83</jakson.version>
     </properties>
 
     <dependencyManagement>
